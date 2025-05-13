@@ -1,6 +1,11 @@
-def main():
-    print("Hello from back-end-project!")
+from fastapi import FastAPI
+from routes.login_router import router  
 
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def fastapi():
+    return {"message": "Welcome to API"}  
+
+# Mount login routes here
+app.include_router(router, prefix="/login", tags=["Login"])
