@@ -1,9 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from models import Student
-from typing import List
 from utils.util import get_db
-from validation.validation import Student
+from validations.validation import Student
 
 router = APIRouter()
 
